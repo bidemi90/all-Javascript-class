@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        main {
+            margin: auto;
+            width: 400px;
+            background-color: rgb(32, 32, 32);
+            height: fit-content;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+        }
+
+        header .div1inheadeer {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding-left: 10px;
+            width: 150px;
+        }
+
+        .screen {
+            height: 200px;
+            width: 100%;
+            background-color: rgb(32, 32, 32);
+            border: none;
+            font-size: 100px;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+
+        .buttonheader {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .buttonheader button {
+            width: 65px;
+            height: 65px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            border: none;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        .buttonheader button:hover {
+            background-color: rgba(255, 255, 255, 0.171);
+        }
+
+        .mainbutton {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 5px;
+        }
+
+        .theblue {
+            background-color: rgb(109, 170, 216);
+        }
+
+        .theblue:hover {
+            background-color: rgb(84, 174, 244);
+        }
+
+        .simain {
+            background-color: rgb(70, 70, 70);
+        }
+
+        .simain:hover {
+            background-color: rgb(50, 50, 50);
+        }
+
+        .sim {
+            background-color: rgb(50, 50, 50);
+        }
+
+        .sim:hover {
+            background-color: rgb(70, 70, 70);
+        }
+
+        .mainbutton button {
+            width: 92px;
+            height: 92px;
+            border-radius: 5px;
+            color: white;
+            border: none;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <header>
+            <div class="div1inheadeer">
+                <span class="material-symbols-outlined">
+                    menu
+                </span>
+                <p><b>Standard</b></p>
+                <span class="material-symbols-outlined">
+                    pin_invoke
+                </span>
+            </div>
+            <div class="div2inheadeer">
+                <span class="material-symbols-outlined">
+                    history
+                </span>
+            </div>
+        </header>
+        <div class="screen">
+            <p id="show"> </p>
+        </div>
+        <section class="buttonsection">
+            <section class="buttonheader">
+                <button>MC</button>
+                <button>MR</button>
+                <button>M+</button>
+                <button>M-</button>
+                <button>MS</button>
+                <button>M
+                    <span class="material-symbols-outlined">
+                        expand_more
+                    </span>
+                </button>
+            </section>
+            <section class="mainbutton">
+                <button onclick="typeper()" class="sim">%</button>
+                <button  class="sim">CE</button>
+                <button  class="sim">C</button>
+                <button class="sim">
+                    <span class="material-symbols-outlined">backspace</span>
+                </button>
+
+
+                <button onclick="typeonedivx()" class="sim">1/x</button>
+                <button onclick="typextwo()" class="sim">x <sup>2</sup></button>
+                <button onclick="typetwosrtx()" class="sim">2✓x</button>
+                <button onclick="typediv()" class="sim">÷</button>
+                <button onclick="type7()" class="simain">7</button>
+                <button onclick="type8()" class="simain">8</button>
+                <button onclick="type9()" class="simain">9</button>
+                <button onclick="typemutiply()" class="sim">x</button>
+                <button onclick="type4()" class="simain">4</button>
+                <button onclick="type5()" class="simain">5</button>
+                <button onclick="type6()" class="simain">6</button>
+                <button onclick="typemin()" class="sim">-</button>
+                <button onclick="type1()" class="simain">1</button>
+                <button onclick="type2()" class="simain">2</button>
+                <button onclick="type3()" class="simain">3</button>
+                <button onclick="typeplu()" class="sim">+</button>
+                <button onclick="typepludivmin()" class="simain">+/-</button>
+                <button onclick="type0()" class="simain">0</button>
+                <button onclick="typedot()" class="simain">.</button>
+                <button onclick="typeequal()" class="theblue"> = </button>
+            </section>
+        </section>
+    </main>
+
+</body>
+
+</html>
+<script>
+    
+    // numbers
+    let number1 = (1)
+    let number2 = (2)
+    let number3 = (3)
+    let number4 = (4)
+    let number5 = (5)
+    let number6 = (6)
+    let number7 = (7)
+    let number8 = (8)
+    let number9 = (9)
+    let number0 = (0)
+
+
+
+    let numberonedivx = ("1/x")
+    let numberxtwo = ("x<sup>2</sup>")
+    let numbertwosrtx = ("2✓x")
+    let numberdiv = ("÷")
+    let numbermutiply = ("*")
+    let numbermin = ("-")
+    let numberplu = ("+")
+    let numberpludivmin = ("+/-")
+    let numberdot = (".")
+    let numberequal = ("=")
+    let numbereper = ("%")
+
+
+
+    function typeper() {
+        console.log(numbereper)
+        document.getElementById('show').innerHTML = numbereper
+
+    }
+    function typeequal() {
+        console.log(numberequal)
+        document.getElementById('show').innerHTML = numberequal
+
+    }
+    function typedot() {
+        console.log(numberdot)
+        document.getElementById('show').innerHTML = numberdot
+
+    }
+    function typepludivmin() {
+        console.log(numberpludivmin)
+        document.getElementById('show').innerHTML = numberpludivmin
+
+    }
+    function typeplu() {
+        console.log(numberplu)
+        document.getElementById('show').innerHTML = numberplu
+
+    }
+    function typemin() {
+        console.log(numbermin)
+        document.getElementById('show').innerHTML = numbermin
+
+    }
+    function typemutiply() {
+        console.log(numbermutiply)
+        document.getElementById('show').innerHTML = numbermutiply
+
+    }
+    function typediv() {
+        console.log(numberdiv)
+        document.getElementById('show').innerHTML = numberdiv
+
+    }
+    function typetwosrtx() {
+        console.log(numbertwosrtx)
+        document.getElementById('show').innerHTML = numbertwosrtx
+
+    }
+    function typextwo() {
+        console.log(numberxtwo)
+        document.getElementById('show').innerHTML = numberxtwo
+
+    }
+    function typeonedivx() {
+        console.log(numberonedivx)
+        document.getElementById('show').innerHTML = numberonedivx
+
+    }
+
+    // 
+    // 
+
+
+    //function for numbers 
+
+    function type1() {
+        console.log(number1)
+        document.getElementById('show').innerHTML = number1
+
+    }
+    function type2() {
+        console.log(number2)
+        document.getElementById('show').innerHTML = number2
+
+    }
+    function type3() {
+        console.log(number3)
+        document.getElementById('show').innerHTML = number3
+
+    }
+    function type4() {
+        console.log(number4)
+        document.getElementById('show').innerHTML = number4
+
+    }
+    function type5() {
+        console.log(number5)
+        document.getElementById('show').innerHTML = number5
+
+    }
+    function type6() {
+        console.log(number6)
+        document.getElementById('show').innerHTML = number6
+
+    }
+    function type7() {
+        console.log(number7)
+        document.getElementById('show').innerHTML = number7
+
+    }
+    function type8() {
+        console.log(number8)
+        document.getElementById('show').innerHTML = number8
+
+    }
+    function type9() {
+        console.log(number9)
+        document.getElementById('show').innerHTML = number9
+
+    }
+    function type0() {
+        console.log(number0)
+        document.getElementById('show').innerHTML = number0
+
+    }
+
+
+
+</script>

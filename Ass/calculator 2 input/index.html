@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    section{
+        width: 200px;
+        height: fit-content;
+        background-color: rgb(96, 94, 94);
+        padding: 20px;
+        border-radius: 7px;
+        margin: auto;
+    }
+    .screen{
+        height: 50px;
+        background-color: rgb(141, 140, 140);
+        margin-bottom: 10px;
+        color: white;
+        
+    }
+    .input1,
+    .input2{
+        width: 90%;
+        padding: 10px;
+        font-size: 15px;
+    }
+    .divbut{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin-top: 10px;
+    }
+    button{
+width: 50px;
+padding: 10px;
+background-color: gray;
+color: white;
+    }
+   </style>
+</head>
+<body>
+
+ <main>
+      
+   <section>
+    <p id="show" class="screen"></p>
+    <input type="number" class="input1" placeholder="INPUT 1" id="inputspace1">
+    <input type="number" class="input2" placeholder="INPUT 2"  id="inputspace2">
+    <div class="divbut">
+        <button id="" onclick="pl()"  >+</button>
+    <button id="" onclick="di()">/</button>
+    <button id="" onclick="mu()">*</button>
+    <button id="" onclick="mi()">-</button>
+    </div>
+   </section>
+
+
+ </main>
+    
+</body>
+</body>
+</html>
+
+
+<script>
+   
+    let number1=document.getElementById("inputspace1")
+    let number2=document.getElementById("inputspace2")
+   
+    
+
+    function pl(){
+        document.getElementById("show").innerHTML= Number(number1.value)+ Number(number2.value)
+    }
+    function di(){
+        document.getElementById("show").innerHTML=Number(number1.value)/ Number(number2.value)
+    }
+    function mu(){
+        document.getElementById("show").innerHTML=Number(number1.value)* Number(number2.value)
+    }
+    function mi(){
+        document.getElementById("show").innerHTML=Number(number1.value)- Number(number2.value)
+    }
+    
+
+</script>

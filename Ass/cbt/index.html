@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* * {
+            margin: 0;
+            padding: 0;
+        } */
+
+        .main {
+            margin: auto;
+            margin-top: 300px;
+            width: fit-content;
+            height: fit-content;
+            background-color: rgb(255, 255, 255);
+            box-shadow: 1px 1px 5px black;
+            border-radius: 10px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .div2 button {
+            width: 100px;
+            padding: 10px;
+            border-radius: 10px;
+            color: black;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        .div2 {
+            width: 80%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        /* .but1 {
+            background-color: ;
+        }
+
+        .but2 {
+            background-color: ;
+        }
+
+        .but3 {
+            background-color: ;
+        } */
+
+        .question {
+            height: 200px;
+            width: 300px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .option{
+            height: 200px;
+            width: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .divq{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: translateX();
+        }
+    </style>
+</head>
+
+<body>
+    <main class="main">
+       <div class="divq">
+        <h1 class="question" id="question"></h1>
+        <p class="option" id="option"></p>
+       </div>
+        <div class="div2">
+            <button id="next" class="but1" onclick="next()">next</button>
+            <button id="pre" class="but2" onclick="pre()">pre</button>
+            <button class="but3">submit</button>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<script>
+    let arrayofquestion = [
+        {
+            question: "1.   What does HTML stand for?",
+            option: [" Hyperlinks and Text Markup Language", " Hyper Text Markup Language", " Home Tool Markup Language"],
+            answer: "Hyper Text Markup Language",
+            choose_answer: ''
+        },
+        {
+            question: "2.   Choose the correct HTML element for the largest heading:",
+            option: [" H1", " P", " SPAN"],
+            answer: "H1",
+            choose_answer: ''
+        },
+        {
+            question: "3.   Choose the correct HTML element to define important text",
+            option: [" STRONG", " I", " BOLD"],
+            answer: "STRONG",
+            choose_answer: ''
+        },
+        {
+            question: "4.   What is the correct HTML for creating a hyperlink?",
+            option: ["a", " b", "  span"],
+            answer: "a",
+            choose_answer: ''
+        },
+        {
+            question: "5.   Which character is used to indicate an end tag?",
+            option: ["-", "**", "/"],
+            answer: "/",
+            choose_answer: ''
+        },
+    ]
+    let question = document.getElementById("question")
+    let option = document.getElementById("option")
+
+    console.log(arrayofquestion)
+
+    let index = 0
+    function que() {
+
+        if (index==0) {
+            document.getElementById("pre").style.display='none'
+        } 
+        if (index>0) {
+            document.getElementById("pre").style.display='block'
+        } 
+        if (index==arrayofquestion.length-1) {
+            document.getElementById("next").style.display='none'
+        } 
+        if (index<arrayofquestion.length-1) {
+            document.getElementById("next").style.display='block'
+
+        } 
+        
+
+        question.innerHTML = arrayofquestion[index].question
+    option.innerHTML = `<p> <input type="radio" onclick="inp()" name="option" id=""> ${arrayofquestion[index].option[0]}</p> <p> <input type="radio" name="option" id=""> ${arrayofquestion[index].option[1]}</p> <p> <input type="radio" name="option" id=""> ${arrayofquestion[index].option[2]}</p> `
+    }
+    que()
+
+    function next() {
+
+
+        index++
+        que()
+
+    }
+    function pre() {
+
+
+       index--
+
+       que()
+
+    }
+    function inp() {
+        
+    }
+    
+</script>

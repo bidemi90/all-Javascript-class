@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        section{
+            height: 90vh;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        main{
+            display: flex;
+            flex-direction: column;
+            width: 400px;
+            padding: 10px;
+            background-color: rgb(58, 58, 58);
+            font-size: 20px;
+            align-items: center;
+            color: burlywood;
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            
+
+                }
+        input{
+            height: 40px;
+            font-size: 20px;
+            margin: 10px;
+            outline: none;
+        }
+        button{
+            padding: 20px 40px ;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+            background-color: burlywood;
+            color: rgb(0, 0, 0);
+            font-size: 20px;
+            font-weight: bolder;
+            
+        }
+    </style>
+</head>
+<body>
+   <section>
+    <main>
+        <p>
+            100-70 Very good <br>
+            69-50 you pass <br>
+            49-30 sorry bro <br>
+            29-0 you fail 
+        </p>
+        <p>score can not be more than 100</p>
+        <p>
+            ENTER YOUR SCORE
+        </p>
+    
+        <input type="number" name="" id="input">
+        <button onclick="cal()" >click</button>
+        <audio src="./audio/pass.mp3" id="aud1" preload="auto"   ></audio>
+        <audio src="./audio/laugh.mp3" id="aud2" preload="auto" ></audio>
+        <audio src="./audio/just dey play.mp3" id="aud3" preload="auto" ></audio>
+        <audio src="./audio/fail.mp3" id="aud4" preload="auto" ></audio>
+    </main>
+   </section>
+</body>
+</html>
+<script>
+    let input= document.getElementById("input")
+
+   let a1=document.getElementById("aud1")
+   let a2=document.getElementById("aud2")
+   let a3=document.getElementById("aud3")
+   let a4=document.getElementById("aud4")
+   
+    function cal() {
+     if ( input.value>100 ) {
+        a2.play()
+        alert("score can not be more than 100" )
+     }
+     else if(input.value==70 ||  input.value > 70){
+       a1.play()
+        alert("Very good")
+     }
+     else if(input.value==50 ||  input.value > 50){
+        a3.play()
+        alert("you pass")
+     }
+     else if(input.value==30 ||  input.value > 30){
+        a3.play()
+        alert("sorry bro")
+     }
+     else{
+        a4.play()
+        alert("you fail")
+     }
+    }
+    
+</script>

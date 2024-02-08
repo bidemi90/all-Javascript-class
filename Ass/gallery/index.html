@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./icofont/icofont.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            width: 700px;
+            display: flex;
+            background-color: sienna;
+        }
+
+        div {
+            height: 500px;
+            width: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+        }
+
+        img {
+            height: auto;
+            width: auto;
+            max-width: 100%;
+            max-height: 100%;
+
+        }
+
+        button {
+            width: 10%;
+            background-color: tan;
+            color: white;
+            border: none;
+        }
+
+        button:hover {
+            background-color: rgba(210, 180, 140, 0.675);
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <button onclick="shoew()"><i class="icofont-bubble-left icofont-3x"></i> </button>
+        <div >
+            <img id="imgscreen" src="" alt="">
+        </div>
+        <button onclick="show()"> <i class="icofont-bubble-right icofont-3x"></i> </button>
+
+
+    </section>
+</body>
+
+</html>
+<script>
+
+
+
+
+    
+     let array=[ "./images/Annotation 2022-05-27 222315 (2).png","./images/Annotation 2022-05-27 222348 (2).png", "./images/IMG_20220420_153038_479 (2).jpg","./images/IMG_20220502_145008_618 (2).jpg","./images/DSC_1491 copy.jpg","./images/DSC_1524 copy.jpg", "images/IMG_20220506_143417_434.jpg","./images/IMG_20220506_143422_066 (4).jpg"]
+    let abdullahi = 0;
+    let imgscreen = document.getElementById("imgscreen");
+    
+
+
+    console.log(array);
+    console.log(array.length - 1);
+    imgscreen.src = array[abdullahi]
+
+
+   
+
+    let imginterval = setInterval(() => {
+        if (abdullahi == array.length - 1) {
+            abdullahi = 0
+        } else {
+            abdullahi++
+        }
+        imgscreen.src = array[abdullahi]
+        console.log(array[abdullahi]);
+    }, 5000);
+
+    function show() {
+        
+        if (abdullahi == array.length - 1) {
+            abdullahi = 0
+        } else {
+            abdullahi++
+        }
+        imgscreen.src = array[abdullahi]
+        console.log(array[abdullahi]);
+    }
+
+    function shoew() {
+        if (abdullahi == 0) {
+            abdullahi = array.length - 1
+        } else {
+            abdullahi--
+
+        }
+        imgscreen.src = array[abdullahi]
+        console.log(array[abdullahi]);
+    }
+</script>

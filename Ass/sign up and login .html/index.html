@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./bootstrap-5.2.3-dist/css/bootstrap.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    .main2 {
+
+      max-width: max-content;
+      min-width: min-content;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+    }
+
+    /* .spi {}
+
+    .spii {} */
+
+    section {
+      width: 400px;
+      height: 500px;
+      background-color: white;
+      border: 1px solid black;
+    }
+
+    .section3 {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      left: 400px;
+    }
+
+    .section3 button {
+      padding: 10px;
+      width: 150px;
+      border-radius: 5px;
+      margin: 5px;
+      text-transform: uppercase;
+
+    }
+
+    .section1 {
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+
+    .section1 .div1 {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section1 .div1 input {
+      padding: 5px;
+      width: 80%;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+    }
+
+    .section1 .div1 input:focus {
+      border-right: 1px solid black;
+    }
+
+    .section1 .div1 button {
+      padding: 10px;
+      width: 150px;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+
+    }
+
+    .section1 .div1 button:hover {
+      box-shadow: 1px 1px 5px black;
+    }
+
+    .section2 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .section2 .div2 {
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .section2 .div2 input {
+      padding: 5px;
+      width: 80%;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+    }
+
+    .section2 .div2 input:focus {
+      border-right: 1px solid black;
+    }
+
+    .section2 .div2 button {
+      padding: 10px;
+      width: 150px;
+      text-transform: uppercase;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+
+    }
+
+    .section2 .div2 button:hover {
+      box-shadow: 1px 1px 5px black;
+    }
+  </style>
+</head>
+
+<body>
+
+  <main class="main">
+    <div id="spi" class="spi">
+
+    </div>
+    <main class="main2">
+      <section class="section1">
+        <form class="div1">
+          <h3 class="h31">Sign In</h3>
+          <input class="input1" type="text" id="name" placeholder="Name"><br>
+          <input class="input1" type="text" id="username" placeholder="User-Name"><br>
+          <input class="input1" type="number" id="number" placeholder="Phone-Number"><br>
+          <input class="input1" type="password" id="password" placeholder="Password"><br>
+          <input class="input1" type="password" id="confirm-password" placeholder="Confirm Password"><br>
+          <button class="button1" onclick="sign_in(event)">sign up</button>
+        </form>
+      </section>
+      <section class="section3" id="section3">
+        <button onclick="right()">sign in</button>
+        <button onclick="left()">login</button>
+      </section>
+      <section class="section2">
+        <div class="div2">
+          <h3 class="h32">login</h3>
+          <input class="input2" type="text" placeholder="User-name" id="username2"><br>
+          <input class="input2" type="text" placeholder="Password" id="password2"><br>
+          <button class="button2" onclick="confirmlogin()">login</button>
+        </div>
+      </section>
+    </main>
+
+
+  </main>
+
+
+</body>
+
+</html>
+
+<script src="./bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+
+
+<script>
+  let name = document.getElementById("name")
+  let username = document.getElementById("username")
+  let number = document.getElementById("number")
+  let password = document.getElementById("password")
+  let confirmpassword = document.getElementById("confirm-password")
+
+  let user_info = []
+  function sign_in(evente) {
+    evente.preventDefault()
+    let tyu = document.getElementById("spi")
+    tyu.innerHTML = ` 
+        <div class="spinner-border spii" role="status"><span class="visually-hidden">Loading...</span></div>`
+    tyu.style.display = "flex"
+    setTimeout(() => {
+      tyu.style.display = "none"
+    }, 2000);
+
+
+    if (password.value != confirmpassword.value) {
+      alert("incorrect password")
+    } else {
+      user_info.push({ name: name.value, username: username.value, number: number.value, password: password.value, confirmpassword: confirmpassword.value })
+      console.log(user_info)
+    }
+
+
+
+    name.value = ""
+    username.value = ""
+    number.value = ""
+    password.value = ""
+    confirmpassword.value = ""
+  }
+
+  let username2 = document.getElementById("username2")
+  let password2 = document.getElementById("password2")
+
+
+
+  function confirmlogin(){
+       
+        let found = user_info.find((current)=> current.username == username2.value && current.password == password2.value);
+        // console.log(found);
+        if(found){
+            alert("Login Successful")
+        }else{
+            alert("User not found")
+        }
+        console.log(user);
+    }
+
+  let section3 = document.getElementById("section3")
+  function right() {
+    section3.style.left = "400px"
+    section3.style.transition = "all 1s linear"
+  }
+  function left() {
+    section3.style.left = "0px"
+    section3.style.transition = "all 1s linear"
+  }
+</script>

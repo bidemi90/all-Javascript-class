@@ -1,0 +1,61 @@
+<html>
+  <head>
+    <style>
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      input[type="text"] {
+        width: 500px;
+        height: 40px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 20px;
+      }
+      button {
+        width: 100px;
+        height: 50px;
+        margin: 10px;
+        font-size: 20px;
+      }
+      #response {
+        width: 500px;
+        height: 200px;
+        padding: 10px;
+        margin: 10px;
+        font-size: 20px;
+        border: 1px solid gray;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="query" />
+      <button onclick="sendQuery()">Submit</button>
+      <pre id="response"></pre>
+    </div>
+    <script>
+      function sendQuery() {
+        const query = document.getElementById("query").value;
+        const endpoint = "https://api.openai.com/v1/engines/davinci/jobs";
+
+        fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer API_KEY"
+          },
+          body: JSON.stringify({
+            prompt: query,
+            max_tokens: 100
+          })
+        })
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById("response").innerText = data.choices[0].text;
+          });
+      }
+    </script>
+  </body>
+</html>
